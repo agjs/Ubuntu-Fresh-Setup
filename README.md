@@ -1,24 +1,39 @@
 # Setup
 
+_General_
 
-*General*
+- Use proprietary (tested) GPU driver.
+- sudo apt upgrade
 
-* Use proprietary (tested) GPU driver.
-* sudo apt upgrade
+**Install Jet Brains Font**
 
+- [Download the Font]()
+
+```bash
+
+# Download the font https://www.jetbrains.com/lp/mono/
+# Extract it to Downloads
+# JetBrainsMono-2.304 the version might differ in the future
+
+mkdir -p ~/.local/share/fonts
+cd ~/Downloads/JetBrainsMono-2.304/fonts/ttf
+cp *.ttf  ~/.local/share/fonts/
+fc-cache -fv
+```
 
 ## Install
 
-*Using Snap*
+_Using Snap_
 
-* OBS Studio
-* VSCode
-* Cameractrls
-* Tilix
+- OBS Studio
+- VSCode
+- Cameractrls
+- Tilix
 
-*Other methods*
+_Other methods_
 
-* [zsh and oh my zsh](https://ohmyz.sh/)
+- [zsh and oh my zsh](https://ohmyz.sh/)
+
 ```bash
 # Install zsh
 sudo apt install zsh
@@ -27,7 +42,8 @@ sudo apt install zsh
 https://ohmyz.sh/#install
 ```
 
-* [Git](https://git-scm.com/download/linux)
+- [Git](https://git-scm.com/download/linux)
+
 ```bash
 
 
@@ -48,11 +64,12 @@ xclip -sel clip < ~/.ssh/id_rsa.pub
 # https://github.com/settings/keys
 ```
 
-* [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-* [Docker](https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository)
+- [nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- [Docker](https://docs.docker.com/engine/install/ubuntu/#set-up-the-repository)
 
 Setup Postgres and Redis
-```bash 
+
+```bash
 # Redis
 sudo docker run --name redis-container -d -p 6379:6379 --restart=always redis:latest
 ```
@@ -81,44 +98,44 @@ With Tilix, just like with other Terminal applications I'm using on Windows (Win
 
 To configure a shortcut for Quake Mode in Tilix, we need to set up a custom shortcut key combination in our system settings, since Tilix itself does not have an internal configuration for this. Here's a general guide:
 
-* Open Tilix Preferences.
-* Go to the "Quake" tab.
-* Configure your Quake window preferences, such as height, width, position, etc.
+- Open Tilix Preferences.
+- Go to the "Quake" tab.
+- Configure your Quake window preferences, such as height, width, position, etc.
 
 Next, we'll need to set up a system-wide shortcut to invoke Tilix in Quake mode:
 For GNOME (common in many Ubuntu installations):
 
-* Open "Settings."
-* Navigate to "Keyboard Shortcuts."
-* Scroll down and click the "+" button to add a custom shortcut.
-* Name it "Tilix Quake Mode" or something similar.
-* In the "Command" field, enter tilix --quake.
-* Click "Set Shortcut" and press the key combination you want to use.
-* Click "Add."
+- Open "Settings."
+- Navigate to "Keyboard Shortcuts."
+- Scroll down and click the "+" button to add a custom shortcut.
+- Name it "Tilix Quake Mode" or something similar.
+- In the "Command" field, enter tilix --quake.
+- Click "Set Shortcut" and press the key combination you want to use.
+- Click "Add."
 
 Now, whenever we press the key combination you set, Tilix should appear in Quake mode.
 
 ### Fix paste shortcut
 
-Tilix paste command by default is set to *CTRL + SHIFT + V*. Remember to update it to *CTRL + V*.
+Tilix paste command by default is set to _CTRL + SHIFT + V_. Remember to update it to _CTRL + V_.
 
 ### Open "code" folder on each new session
 
-We can configure Tilix to always start in a specific directory (such as our code folder) for each new session. 
+We can configure Tilix to always start in a specific directory (such as our code folder) for each new session.
 
-* Open Tilix.
-* Right-click on the terminal window and go to "Profiles".
-* Choose the profile you want to edit, or the default one if you haven't created any custom profiles.
-* Click "Edit Profile".
-* In the "Command" tab, find the "Run custom command instead of my shell" option.
-* Check the box and enter the command you want to run. If you're using bash or Zsh, you might use something like:
-
+- Open Tilix.
+- Right-click on the terminal window and go to "Profiles".
+- Choose the profile you want to edit, or the default one if you haven't created any custom profiles.
+- Click "Edit Profile".
+- In the "Command" tab, find the "Run custom command instead of my shell" option.
+- Check the box and enter the command you want to run. If you're using bash or Zsh, you might use something like:
 
 ```bash
 bash --init-file <(echo "cd ~/path/to/your/code/folder")
 ```
 
 or with Zsh:
+
 ```bash
 zsh -c 'cd ~/path/to/your/code/folder; exec zsh'
 ```
