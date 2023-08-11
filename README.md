@@ -7,12 +7,10 @@ _General_
 
 **Install Jet Brains Font**
 
-- [Download the Font]()
+- [Download the Font](https://www.jetbrains.com/lp/mono/)
+- Extract the zip to `~/Downloads`
 
 ```bash
-
-# Download the font https://www.jetbrains.com/lp/mono/
-# Extract it to Downloads
 # JetBrainsMono-2.304 the version might differ in the future
 
 mkdir -p ~/.local/share/fonts
