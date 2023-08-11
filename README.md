@@ -1,6 +1,6 @@
 # Setup
 
-_General_
+**General**
 
 - Use proprietary (tested) GPU driver.
 - sudo apt upgrade
@@ -21,14 +21,14 @@ fc-cache -fv
 
 ## Install
 
-_Using Snap_
+**Using Snap**
 
 - OBS Studio
 - VSCode
 - Cameractrls
 - Tilix
 
-_Other methods_
+**Other**
 
 - [zsh and oh my zsh](https://ohmyz.sh/)
 
