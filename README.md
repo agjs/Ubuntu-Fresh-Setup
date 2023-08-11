@@ -9,6 +9,15 @@
 
 *Other methods*
 
+* [zsh and oh my zsh](https://ohmyz.sh/)
+```bash
+# Install zsh
+sudo apt install zsh
+
+# Install oh my zsh
+https://ohmyz.sh/#install
+```
+
 * [Git](https://git-scm.com/download/linux)
 ```bash
 
@@ -54,3 +63,56 @@ CREATE USER developer WITH PASSWORD 'postgrespw';
 ALTER USER developer WITH SUPERUSER;
 CREATE DATABASE development OWNER developer;
 ```
+
+## Tilix
+
+With Tilix, just like with other Terminal applications I'm using on Windows (Windows Terminal) and my Macbook Pro (iTerm 2), we want to configure two things, quake mode and a default directory that opens when a new session is created.
+
+### Using Quake Mode via Shortcut in Tilix
+
+To configure a shortcut for Quake Mode in Tilix, we need to set up a custom shortcut key combination in our system settings, since Tilix itself does not have an internal configuration for this. Here's a general guide:
+
+* Open Tilix Preferences.
+* Go to the "Quake" tab.
+* Configure your Quake window preferences, such as height, width, position, etc.
+
+Next, we'll need to set up a system-wide shortcut to invoke Tilix in Quake mode:
+For GNOME (common in many Ubuntu installations):
+
+* Open "Settings."
+* Navigate to "Keyboard Shortcuts."
+* Scroll down and click the "+" button to add a custom shortcut.
+* Name it "Tilix Quake Mode" or something similar.
+* In the "Command" field, enter tilix --quake.
+* Click "Set Shortcut" and press the key combination you want to use.
+* Click "Add."
+
+Now, whenever we press the key combination you set, Tilix should appear in Quake mode.
+
+### Fix paste shortcut
+
+Tilix paste command by default is set to *CTRL + SHIFT + V*. Remember to update it to *CTRL + V*.
+
+### Open "code" folder on each new session
+
+We can configure Tilix to always start in a specific directory (such as our code folder) for each new session. 
+
+* Open Tilix.
+* Right-click on the terminal window and go to "Profiles".
+* Choose the profile you want to edit, or the default one if you haven't created any custom profiles.
+* Click "Edit Profile".
+* In the "Command" tab, find the "Run custom command instead of my shell" option.
+* Check the box and enter the command you want to run. If you're using bash or Zsh, you might use something like:
+
+
+```bash
+bash --init-file <(echo "cd ~/path/to/your/code/folder")
+```
+
+or with Zsh:
+
+```bash
+zsh -c 'cd ~/path/to/your/code/folder; exec zsh'
+```
+
+Close the preferences window. Done.
