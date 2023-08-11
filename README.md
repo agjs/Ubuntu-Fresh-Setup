@@ -1,5 +1,14 @@
 # Setup
 
+
+*General*
+
+* Use proprietary (tested) GPU driver.
+* sudo apt upgrade
+
+
+## Install
+
 *Using Snap*
 
 * OBS Studio
@@ -64,7 +73,7 @@ ALTER USER developer WITH SUPERUSER;
 CREATE DATABASE development OWNER developer;
 ```
 
-## Tilix
+## Tilix (Terminal)
 
 With Tilix, just like with other Terminal applications I'm using on Windows (Windows Terminal) and my Macbook Pro (iTerm 2), we want to configure two things, quake mode and a default directory that opens when a new session is created.
 
@@ -110,7 +119,6 @@ bash --init-file <(echo "cd ~/path/to/your/code/folder")
 ```
 
 or with Zsh:
-
 ```bash
 zsh -c 'cd ~/path/to/your/code/folder; exec zsh'
 ```
